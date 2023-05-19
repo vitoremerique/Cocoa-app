@@ -1,13 +1,15 @@
 import cocoa from './../Imagens/cocoa.jpg';
-import { GestureResponderEvent, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import {styles} from './styles';
+import {useNavigation} from '@react-navigation/native';
+
 
 
 export default function Login() {
-  function onPress(event: GestureResponderEvent): void {
-    throw new Error('Function not implemented.');
-  }
-
+  
+const navigation = useNavigation();
+  
+  
   return (
     <View style={styles.container}>
       <Text style={styles.text1}>Cocoa app</Text>
@@ -19,7 +21,10 @@ export default function Login() {
           <Text >Email</Text>
           <TextInput
           style ={styles.inputBox}
-          placeholder='Digite seu email'/>
+          placeholder='Digite seu email'
+          placeholderTextColor='#B2B2B2'
+          />
+          
           </View>
 
             <View >
@@ -27,21 +32,24 @@ export default function Login() {
           <TextInput
           style ={styles.inputBox}
           placeholder='Digite sua senha'
-          secureTextEntry={true}/>
+          secureTextEntry={true}
+          placeholderTextColor='#B2B2B2'/>
           
             </View>
 
                 <View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Home')}>
          <Text style={styles.bottonInput}>Login</Text>
           </TouchableOpacity>
           
                 </View>
 
                     <View>
-            <TouchableOpacity>
+             <TouchableOpacity onPress={()=> navigation.navigate('Register')}>
             <Text style={styles.NotRegister}>Não possuo cadastro</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> 
+            
+                    
                     </View>
 
                         <View>
@@ -50,5 +58,5 @@ export default function Login() {
             </TouchableOpacity>
                         </View>
     </View>
-  );
+  )
 }

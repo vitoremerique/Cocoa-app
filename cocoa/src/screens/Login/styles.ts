@@ -10,23 +10,23 @@ export const styles = StyleSheet.create({
     },
     text1:{
       width: '100%',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        margin:100,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      marginTop:50 ,
       
     },
     inputBox: {
       backgroundColor: '#292D32',
       height: 32,
       color: '#FFFFFF',
-      padding: 16,
+      
+      padding: 8,
       borderRadius: 8,
-      placeHolder: 'Vamos ver',
       fontSize: 13,
-      placeholderTextColor: '#FFFFFF',
       width:300,
+      marginTop:5, 
       borderWidth: 1,
-      borderColor:'#C3BBBB'
+      borderColor:'#C3BBBB',
   },
   bottonInput:{
     backgroundColor:'#FFA721',
@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
       borderColor:'#EDEDED'
   },
   boxdiv:{
-    margin:30,
+    margin:10,
     justifyContent:'space-around'
   },
   NotRegister:{
@@ -54,8 +54,8 @@ export const styles = StyleSheet.create({
     marginTop:10
   },
   logo: {
-    width: 66,
-    height: 58,
+    width: 250,
+    height:250,
   }
   });
   
