@@ -11,7 +11,12 @@ export const styles = StyleSheet.create({
         marginTop:25,
         padding: 40,
         color:'#120a8f',
-        borderRadius:20
+        borderRadius:20,
+        borderStyle:'solid',
+        borderWidth:1,
+        borderRightWidth:4,
+        borderLeftWidth:4,
+        
         
         
       },

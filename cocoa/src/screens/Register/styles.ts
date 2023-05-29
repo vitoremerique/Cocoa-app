@@ -9,10 +9,10 @@ export const styles = StyleSheet.create({
     },
     inputBox: {
       backgroundColor: '#292D32',
-      height: 32,
+      height: 50,
       color: '#FFFFFF',
       
-      padding: 8,
+      padding: 10,
       borderRadius: 8,
       fontSize: 13,
       width:300,
@@ -26,14 +26,15 @@ export const styles = StyleSheet.create({
   },
   BottonRegister:{
     backgroundColor:'#FFA721',
-    height:19,
-    width:70,
+    height:30,
+    width:75,
+    padding:5,
     textAlign:'center',
-    
+    textAlignVertical:'center',
     marginTop:75,
     borderRadius: 6,
     borderWidth: 1,
-      borderColor:'#EDEDED'
+    borderColor:'#EDEDED'
   }
 
 })

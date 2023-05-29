@@ -9,8 +9,8 @@ import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import Config from './src/screens/Config';
 import {Ionicons} from '@expo/vector-icons'
-import Camera from './src/screens/Camera';
 import Galery from './src/screens/Galery';
+import Cam from './src/screens/Cam';
 
 
 
@@ -28,14 +28,14 @@ function HomeTab() {
        
        }}}>
        
-        <Tab.Screen name="Home" component={Home} options={
+        <Tab.Screen name="Homee" component={Home} options={
           {title:'', headerTransparent:true, headerShown:false, tabBarIcon:({color,size, focused})=>
           {
             return <Ionicons name='home' size={size} color={color}/>
           }}}/>
 
 
-        <Tab.Screen name ="Camera" component={Camera}  options={
+        <Tab.Screen name ="Camera" component={Cam}  options={
           {title:'', headerTransparent:true, headerShown:false , tabBarIcon:({color,size, focused})=>
           {
             return <Ionicons name='camera' size={size} color={color}/>

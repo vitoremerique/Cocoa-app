@@ -12,6 +12,7 @@ const navigation = useNavigation();
   
   return (
     <View style={styles.container}>
+    
       <Text style={styles.text1}>Cocoa app</Text>
 
           <Image style={styles.logo} source={cocoa} />
@@ -57,6 +58,7 @@ const navigation = useNavigation();
             <Text style={styles.NotRegister}>Esqueci minha senha</Text>
             </TouchableOpacity>
                         </View>
+                        
     </View>
   )
 }

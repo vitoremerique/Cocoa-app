@@ -8,34 +8,36 @@ export const styles = StyleSheet.create({
       marginTop:25,
       justifyContent:'center',
       
+      
+      
     },
     text1:{
       width: '100%',
       textAlign: 'center',
       fontWeight: 'bold',
-      marginTop:50 ,
+      marginTop:0 ,
       
     },
     inputBox: {
       backgroundColor: '#292D32',
-      height: 32,
+      height: 60,
       color: '#FFFFFF',
-      
-      padding: 8,
+      padding: 10,
       borderRadius: 8,
       fontSize: 13,
-      width:300,
+      width:500,
       marginTop:5, 
       borderWidth: 1,
       borderColor:'#C3BBBB',
   },
   bottonInput:{
     backgroundColor:'#FFA721',
-    height:19,
-    width:70,
+    height:30,
+    width:75,
     textAlign:'center',
-    
+    textAlignVertical:'center',
     marginTop:75,
+    padding:5,
     borderRadius: 6,
     borderWidth: 1,
       borderColor:'#EDEDED'
@@ -47,12 +49,14 @@ export const styles = StyleSheet.create({
   NotRegister:{
     textDecorationLine:'underline',
     color:'#000000',
-    marginTop:10
+    marginTop:10,
+    padding:10,
   },
   forgetpass:{
     textDecorationLine:'underline',
     color:'#000000',
-    marginTop:10
+    marginTop:10,
+    padding:10,
   },
   logo: {
     width: 250,

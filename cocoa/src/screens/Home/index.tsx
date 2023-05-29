@@ -50,6 +50,46 @@ export default function Home(){
 
       <Text>Home</Text>
     </View>
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
+    <View style = {styles.container}>
+
+      <Text>Home</Text>
+    </View>
 
 
       </ScrollView>
