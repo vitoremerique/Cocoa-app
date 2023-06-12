@@ -23,6 +23,7 @@
         "backgroundColor": "#ffffff"
       },
       "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
+      "usesCleartextTraffic":"true",
       "plugins": [
         
             "expo-image-picker",

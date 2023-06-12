@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import Register from './src/screens/Register';
 import Login from './src/screens/Login';
-import Home from './src/screens/Home';
+import {Home} from './src/screens/Home';
 import Config from './src/screens/Config';
 import {Ionicons} from '@expo/vector-icons'
 import Galery from './src/screens/Galery';
@@ -23,7 +23,7 @@ function HomeTab() {
   
       <Tab.Navigator screenOptions={{tabBarShowLabel:false, tabBarActiveTintColor:'#FFA721' ,tabBarStyle:{position:'absolute',
        backgroundColor:'#D9D9D9', borderTopColor:'#FFFF',
-       borderTopWidth:0, bottom:14, left:14, right:14, elevation:0,
+       borderTopWidth:0, bottom:0, left:0, right:0, elevation:0,
        borderRadius:4, height:60
        
        }}}>
