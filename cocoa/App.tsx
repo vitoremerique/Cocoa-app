@@ -3,7 +3,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from  '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Register from './src/screens/Register';
 import Login from './src/screens/Login';
 import {Home} from './src/screens/Home';
@@ -11,6 +11,8 @@ import Config from './src/screens/Config';
 import {Ionicons} from '@expo/vector-icons'
 import Galery from './src/screens/Galery';
 import Cam from './src/screens/Cam';
+import { User, onAuthStateChanged } from 'firebase/auth';
+import { FIREBASE_AUTH } from './src/firebase';
 
 
 
@@ -65,14 +67,24 @@ function HomeTab() {
 
 
 export default function App() {
+
+  const [user,SetUser] = useState<User|null>(null)
+
+  useEffect(()=>{
+    onAuthStateChanged(FIREBASE_AUTH, (user)=>{
+      console.log('user',user)
+      SetUser(user)
+    })
+  },[])
   return (
     <NavigationContainer>
 
-    <Stack.Navigator>
-
-    <Stack.Screen name="Login" component={Login} options={{title:'', headerTransparent:true, headerShown:false}}/>
-    <Stack.Screen name='Register' component={Register} options={{}}/>
-    <Stack.Screen name='Home' component={HomeTab} options={{title:'', headerTransparent:true, headerShown:false}}/>
+    <Stack.Navigator initialRouteName='Login'>
+    {user?(<Stack.Screen name='Home' component={HomeTab} options={{title:'', headerTransparent:true, headerShown:false}}/>)
+    :(<Stack.Screen name="Login" component={Login} options={{title:'', headerTransparent:true, headerShown:false}}/>)}
+    
+    <Stack.Screen name='Register' component={Register} options={{headerTransparent:true, headerShown:true}}/>
+    
 
     </Stack.Navigator>
 
