@@ -18,7 +18,10 @@ import { FIREBASE_AUTH } from './src/firebase';
 
 
 const Stack = createNativeStackNavigator();
+
 const Tab = createBottomTabNavigator();
+
+
 
 function HomeTab() {
   return (
@@ -85,8 +88,10 @@ export default function App() {
     
     <Stack.Screen name='Register' component={Register} options={{headerTransparent:true, headerShown:true}}/>
     
+    
 
     </Stack.Navigator>
+    
 
     </NavigationContainer>
     

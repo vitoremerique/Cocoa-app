@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { uploadPicture } from '../../firebase';
 
 let options ={
     
@@ -9,7 +10,7 @@ let options ={
 
 
 export default function ImagePickerExample() {
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState("");
   
     const pickImage = async () => {
       // No permissions request is necessary for launching the image library
@@ -24,8 +25,14 @@ export default function ImagePickerExample() {
       
   
       if (!result.cancelled) {
-        setImage(result.ImagePickerAsset[0].uri);
-        console.log(result);
+        setImage(result.uri);
+        const img  = image;
+        const fileName = img.split("/").pop();
+        const uploadResp = await uploadPicture(img, fileName, (v) =>
+          console.log(v)
+        );
+        
+        console.log("PASSOOOU"+uploadResp)
       }
     };
   
