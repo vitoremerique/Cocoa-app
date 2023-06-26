@@ -23,13 +23,18 @@
         "backgroundColor": "#ffffff"
       },
       "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
+      "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+      "photosPermission": "custom photos permission",
+
       "usesCleartextTraffic":"true",
       "plugins": [
         
             "expo-image-picker",
+            "expo-media-library",
         {
           "photosPermission": "custom photos permission",
           "cameraPermission": "Allow $(PRODUCT_NAME) to open the camera",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
 
           "//": "Disables the microphone permission",
           "microphonePermission": false

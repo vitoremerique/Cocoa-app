@@ -47,20 +47,27 @@ getHistoric()}
 ,)
 
 return (
-  <View style={styles.container}>
-    <SafeAreaView>
-    <Text style={styles.title}>Histórico</Text>
+  // <View style={styles.container}>
+  //   <SafeAreaView>
+  //   <Text style={styles.title}>Histórico</Text>
 
-    <ScrollView style={styles.product_list}>
-      {historic.map((item, index) => {
-          return (
-              <View key={index} style={styles.card}>
-                  <Historic historic={item} />
-              </View>
-          );
-      })}
-    </ScrollView>   
-       </SafeAreaView>
+  //   <ScrollView style={styles.product_list}>
+  //     {historic.map((item, index) => {
+  //         return (
+  //             <View key={index} style={styles.card}>
+  //                 <Historic historic={item} />
+  //             </View>
+  //         );
+  //     })}
+  //   </ScrollView>   
+  //      </SafeAreaView>
+  // </View>
+
+
+  <View>
+    
+      <Text>a</Text>
+    
   </View>
 );
 }
