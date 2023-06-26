@@ -1,6 +1,6 @@
 
 import { View,Text, TextInput, TouchableOpacity, ToastAndroid} from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { StackRouter, useNavigation } from "@react-navigation/native";
 import {styles} from './styles';
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -12,14 +12,14 @@ export default function Register() {
   const [name, SetName]= useState("");
   const [email,SetEmail]= useState("");
   const [password,SetPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  
   const auth = FIREBASE_AUTH
   const db = FIREBASE_DB
 
   const navigation = useNavigation();
 
 const SighUp = async()=>{
-  setLoading(true)
+  
   try {
     const  response = await createUserWithEmailAndPassword(auth,email, password)
     addDoc(collection(db,"Users"),{
@@ -28,12 +28,13 @@ const SighUp = async()=>{
       password:password
     })
     console.log(response)
-    alert('Check your email!')
+    
+    navigation.navigate("Home")
+   
+    
   } catch (error:any) {
     console.log(error)
     alert("Sigh in failed: "+ error.message)
-  }finally{
-    setLoading(false)
   }
 }
 
@@ -119,6 +120,8 @@ const SighUp = async()=>{
               <Text style = {styles.BottonRegister}>Registrar</Text>
 
             </TouchableOpacity>
+
+           
 
             
 

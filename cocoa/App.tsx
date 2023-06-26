@@ -86,7 +86,9 @@ export default function App() {
     {user?(<Stack.Screen name='Home' component={HomeTab} options={{title:'', headerTransparent:true, headerShown:false}}/>)
     :(<Stack.Screen name="Login" component={Login} options={{title:'', headerTransparent:true, headerShown:false}}/>)}
     
-    <Stack.Screen name='Register' component={Register} options={{headerTransparent:true, headerShown:true}}/>
+    <Stack.Screen name='Register' component={Register} options={{headerTransparent:true, headerShown:true, gestureEnabled:true}}/>
+
+    
     
     
 

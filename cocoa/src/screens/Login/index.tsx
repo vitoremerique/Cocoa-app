@@ -86,11 +86,7 @@ const SighIn = async()=>{
                     
                     </View>
 
-                        <View>
-            <TouchableOpacity>
-            <Text style={styles.NotRegister}>Esqueci minha senha</Text>
-            </TouchableOpacity>
-                        </View>
+                            
 
                        
                         

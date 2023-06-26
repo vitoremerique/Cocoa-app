@@ -7,22 +7,22 @@ import {Historic} from './../../components/Historic';
 
 export function Home() {
 
-  const [ historic, setHistoric ] = useState([]);
+  // const [ historic, setHistoric ] = useState([]);
 
 
-  const getHistoric = async () => {
-    try {
-      const response = await fetch(
-        'http://192.168.0.101:19001/produtos',
-      );
-      const json = await response.json();
+  // const getHistoric = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       'http://192.168.0.101:19001/produtos',
+  //     );
+  //     const json = await response.json();
       
-      setHistoric(json);
-    } catch (error) {
-      console.error(error);
-    }
+  //     setHistoric(json);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
     
-  };
+  // };
 
   // const getListHistoric = ()=>{
   //   fetch('http://192.168.0.101:19001/produtos',{
@@ -41,10 +41,10 @@ export function Home() {
   // }
 
  
-useEffect(()=>{
-// getListHistoric()
-getHistoric()}
-,)
+// useEffect(()=>{
+// // getListHistoric()
+// getHistoric()}
+// ,)
 
 return (
   // <View style={styles.container}>
