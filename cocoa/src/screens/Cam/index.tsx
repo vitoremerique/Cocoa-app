@@ -2,9 +2,9 @@
 import { styles } from "./styles";
 import React, { useEffect, useRef, useState } from "react";
 import * as ImagePicker from "expo-image-picker"
-import * as MediaLibrary from "expo-media-library"
+
 import { View, Text,  Button, Image, Alert, StatusBar, } from "react-native";
-import { uploadPicture } from "../../firebase";
+
 
 
 
@@ -33,32 +33,7 @@ export default function Galery(){
 
   const takePhoto = async()=>{
    
-    try{
-    const cameraResp = await ImagePicker.launchCameraAsync({
-      allowsEditing: false,
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality:1,
-     
-    });
-   console.log(cameraResp)
-    
-    if (!cameraResp.cancelled) {
-      
-      setImage(cameraResp.uri);
-      const img  = image;
-      const fileName = img.split("/").pop();
-      const uploadResp = await uploadPicture(img, fileName, (v) =>
-        console.log(v)
-      );
-      
-      console.log("PASSOOOU"+uploadResp)
-    }
-  }catch(e){
-    
-    Alert.alert("problemaaa "+e.message)
-    console.log("porrra "+e.message)
-  }
-  
+   
     
   }
   

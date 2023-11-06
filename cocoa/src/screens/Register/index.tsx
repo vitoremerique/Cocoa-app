@@ -4,68 +4,63 @@ import { StackRouter, useNavigation } from "@react-navigation/native";
 import {styles} from './styles';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Timestamp, addDoc, collection } from "firebase/firestore";
-import { FIREBASE_AUTH, FIREBASE_DB } from "../../firebase";
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+
+
 
 export default function Register() {
   const [name, SetName]= useState("");
   const [email,SetEmail]= useState("");
   const [password,SetPassword] = useState("");
   
-  const auth = FIREBASE_AUTH
-  const db = FIREBASE_DB
+
+
 
   const navigation = useNavigation();
 
-const SighUp = async()=>{
+// const SighUp = async()=>{
   
+//   try {
+//     const response = axios.post("http://localhost:8080/user",{name:name, email:email, password:password})
+    
+//     console.log(response)
+//     console.log((await response).data)
+    
+    
+//     navigation.navigate("Login")
+   
+    
+//   } catch (error:any) {
+//     console.log(error)
+//     alert("Sigh in failed: "+ error.message)
+//   }
+// }
+
+
+const SighUp = async () => {
   try {
-    const  response = await createUserWithEmailAndPassword(auth,email, password)
-    addDoc(collection(db,"Users"),{
-      email:email,
-      name:name,
-      password:password
-    })
-    console.log(response)
-    
-    navigation.navigate("Home")
-   
-    
-  } catch (error:any) {
-    console.log(error)
-    alert("Sigh in failed: "+ error.message)
+
+    console.log("name:", name);
+console.log("email:", email);
+console.log("password:", password);
+
+    const response = await axios.post("http://192.168.0.103:8080/user", {
+      name: name,
+      email: email,
+      password: password
+    });
+
+    console.log(response.data); 
+
+    navigation.navigate("Login");
+  } catch (error) {
+    console.log("Erro:", error);
+    console.error(error);
+    alert("Sign in failed: " + error.message);
   }
-}
+};
 
 
 
-
-//   const handleFormSubmit = async () => {
-//     try {
-//       fetch('http://192.168.0.101:19001/users', {
-//   method: 'POST',
-//   body: JSON.stringify({
-    
-//     Nome: name,
-//     email:email,
-//     password:password,
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
-//   navigation.navigate('Login')
-  
-//     } catch (error) {
-//       console.error(error); // Trate possíveis erros na requisição
-     
-//     }
-   
-//   };
 
 
 
@@ -131,5 +126,3 @@ const SighUp = async()=>{
       
     );
   }
-
-

@@ -1,19 +1,13 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { styles } from "./styles";
-import { getAuth, signOut } from "firebase/auth";
+
+import { useNavigation } from "@react-navigation/native";
+
 
 export const Config= () => {
   const handleLogout = async () => {
-    const auth = getAuth();
-    try {
-      await signOut(auth);
-      console.log("User signed out!");
-      // Redirecione para a tela de login ou para qualquer outra tela desejada
-    } catch (error) {
-      console.log(error);
-      alert("Sign out failed: " + error.message);
-    }
+    
   };
 
   return (

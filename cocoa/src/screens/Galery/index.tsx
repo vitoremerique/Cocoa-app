@@ -13,27 +13,7 @@ export default function ImagePickerExample() {
     const [image, setImage] = useState("");
   
     const pickImage = async () => {
-      // No permissions request is necessary for launching the image library
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: false,
-        aspect: [4, 3],
-        quality: 1,
-        exif:true
-      });
-  
-      
-  
-      if (!result.cancelled) {
-        setImage(result.uri);
-        const img  = image;
-        const fileName = img.split("/").pop();
-        const uploadResp = await uploadPicture(img, fileName, (v) =>
-          console.log(v)
-        );
-        
-        console.log("PASSOOOU"+uploadResp)
-      }
+     
     };
   
     return (

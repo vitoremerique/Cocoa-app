@@ -25,7 +25,7 @@
       "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
       "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
       "photosPermission": "custom photos permission",
-
+      "uses-permission android:name":"android.permission.INTERNET" ,
       "usesCleartextTraffic":"true",
       "plugins": [
         
@@ -38,13 +38,22 @@
 
           "//": "Disables the microphone permission",
           "microphonePermission": false
+          
         }
+        
           
         
       ]
     },
+    
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "port": 19006,
+      "ssl": false,
+      "hostname": "localhost",
+      "packagerOpts": {
+        "sourceExts": ["jsx", "js", "ts", "tsx"]
+      }
     }
   }
 }
