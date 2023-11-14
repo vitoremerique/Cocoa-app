@@ -1,5 +1,6 @@
 # Cocoa-app :brazil::trophy:
-### Front-end do aplicativo mobile desenvolvido em React Native + Expo :camera_flash: :orangutan:
+### Frontend mobile project is being developed in React Native + Expo :camera_flash: :orangutan:
+
 
 ## Especifications: 	:warning:
 - React Native 0.71.7
