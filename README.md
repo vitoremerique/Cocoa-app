@@ -1,19 +1,29 @@
 # Cocoa-app :brazil::trophy:
 ### Front-end do aplicativo mobile desenvolvido em React Native + Expo :camera_flash: :orangutan:
 
-## Especificações: 	:warning:
+## Especifications: 	:warning:
 - React Native 0.71.7
 - Expo 48.0.15
 - TypeScript 4.9.4
-## Bibliotecas Principais: :warning:
+## Main Libraries: :warning:
 - react-native-web: 0.18.10
 - react-dom: 18.2.0
 - @expo/webpack-config: 18.0.1
-  ### Estilização::orangutan:
+  ### Stilization::orangutan:
   - Stylesheet
-  ### Navegação::orangutan:
+  ### Navegation::orangutan:
   - Stack Navigation --> createNativeStackNavigator
   - Tab Navigation --> createBottomTabNavigator 
-## Icones:
+## Icons:
 - Ionicons
-:shipit: 
+
+## Cloning the repository
+- git clone ```https://github.com/vitoremerique/Cocoa-app.git```
+
+## Instaling dependencies
+- Execute the command on terminal 
+```npm install```
+## Executiing project :shipit: 
+- To execute the project run on terminal the command ahead
+- ```npm start```.
+
