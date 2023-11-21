@@ -6,6 +6,8 @@
 - React Native 0.71.7
 - Expo 48.0.15
 - TypeScript 4.9.4
+- Node.js 16.14.0
+
 ## Main Libraries: :warning:
 - react-native-web: 0.18.10
 - react-dom: 18.2.0
