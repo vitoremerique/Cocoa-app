@@ -11,6 +11,8 @@ import Config from './src/screens/Config';
 import {Ionicons} from '@expo/vector-icons'
 import Galery from './src/screens/Galery';
 import Cam from './src/screens/Cam';
+import { AlterarSenha } from './src/screens/AlterarSenha';
+import DeletarConta from './src/screens/DeletarConta';
 
 
 
@@ -22,7 +24,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-function HomeTab() {
+export function HomeTab() {
   return (
   
       <Tab.Navigator screenOptions={{tabBarShowLabel:false, tabBarActiveTintColor:'#FFA721' ,tabBarStyle:{position:'absolute',
@@ -75,12 +77,15 @@ export default function App() {
     <NavigationContainer>
 
     <Stack.Navigator initialRouteName='Login'>
-    {/* <Stack.Screen name='Home' component={HomeTab} options={{title:'', headerTransparent:true, headerShown:false}}/> */}
+     <Stack.Screen name='Home' component={HomeTab} options={{title:'', headerTransparent:true, headerShown:false}}/> 
     <Stack.Screen name="Login" component={Login} options={{title:'', headerTransparent:true, headerShown:false}}/>
     
     <Stack.Screen name='Register' component={Register} options={{headerTransparent:true, headerShown:true, gestureEnabled:true}}/>
 
-    
+    <Stack.Screen name='AlterarSenha' component={AlterarSenha} options={{headerTransparent:true, headerShown:true, gestureEnabled:true}}/>
+
+    <Stack.Screen name='DeletarConta' component={DeletarConta} options={{headerTransparent:true, headerShown:true, gestureEnabled:true}}/>
+
     
     
 

@@ -1,14 +1,14 @@
 
 import { View,Text, TextInput, TouchableOpacity, ToastAndroid} from "react-native";
-import { StackRouter, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import {styles} from './styles';
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
 import React from "react";
 
 
 
-export default function Register() {
+export default function DeletarConta() {
   const [name, SetName]= useState("");
   const [email,SetEmail]= useState("");
   const [password,SetPassword] = useState("");
@@ -17,51 +17,25 @@ export default function Register() {
 
 
   const navigation = useNavigation();
-
-// const SighUp = async()=>{
+  const ConfirmarExclusao = async () => {
+    try {
+      const response = await axios.delete("http://localhost:8080/user", {
+        data: {
+          name: name,
+          email: email,
+          password: password
+        }
+      });
   
-//   try {
-//     const response = axios.post("http://localhost:8080/user",{name:name, email:email, password:password})
-    
-//     console.log(response)
-//     console.log((await response).data)
-    
-    
-//     navigation.navigate("Login")
-   
-    
-//   } catch (error:any) {
-//     console.log(error)
-//     alert("Sigh in failed: "+ error.message)
-//   }
-// }
-
-
-const SighUp = async () => {
-  try {
-
-    console.log("name:", name);
-console.log("email:", email);
-console.log("password:", password);
-    
-
-    const response = await axios.post("http://localhost:8080/user", {
-      name: name,
-      email: email,
-      password: password
-    });
-
-    console.log(response.data); 
-
-    alert("Registrado com sucesso")
-
-    navigation.navigate("Login");
-  } catch (error) {
-    console.log("Erro:", error);
-    console.error(error);
-    alert("Sign in failed: " + error.message);
-  }
-};
+      console.log(response.data);
+      alert("Conta deletada com sucesso");
+      navigation.navigate("Login");
+    } catch (error) {
+      console.log("Erro:", error);
+      console.error(error);
+      alert("Falha ao excluir conta: " + error.message);
+    }
+  };
 
 
 
@@ -114,9 +88,9 @@ console.log("password:", password);
           
             </View>
 
-            <TouchableOpacity onPress={()=> SighUp()}>
+            <TouchableOpacity onPress={()=> ConfirmarExclusao()}>
 
-              <Text style = {styles.BottonRegister}>Registrar</Text>
+              <Text style = {styles.BottonRegister}>Confirmar</Text>
 
             </TouchableOpacity>
 

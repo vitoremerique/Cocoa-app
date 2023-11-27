@@ -8,6 +8,10 @@ export const styles = StyleSheet.create({
         marginTop:25,
         justifyContent:'center',
         
-      }
+      },
+
+    buttons:{
+      marginTop: 10
+    }
     
 })

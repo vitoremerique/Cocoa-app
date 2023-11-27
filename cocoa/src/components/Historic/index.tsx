@@ -1,5 +1,6 @@
 import { View,Text } from "react-native";
 import { styles } from "./styles";
+import React from "react";
 export function Historic({historic}){
     return(
         <View>

@@ -3,32 +3,48 @@ import { Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import {styles} from './styles';
 import {useNavigation} from '@react-navigation/native';
 import React, { useState } from 'react';
-
+import { HomeTab } from '../../../App';
 import axios from 'axios';
+import { requestCameraPermissionsAsync } from 'expo-image-picker';
 
 
 
 export default function Login() {
-  const [email,setEmail] = useState();
-  const [senha,setSenha] = useState();
-  const [leading, setLoading] = useState(false);
+  const [name,setName] = useState("");
+  const [password,setSenha] = useState("");
+
   
 
   
 const navigation = useNavigation();
+const navigationHome = useNavigation(); 
 
 const SighIn = async()=>{
   
   try {
-    const response = axios.get("http://192.168.0.103:8080/user",{id:25})
     
-    console.log(response)
+     
+    const response = await axios.post("http://localhost:8080/login", {
+      name,
+      password
+    })
+
+    console.log('Alõ', response.data);
+
+    if (response.status === 200) {
+      console.log('Login bem-sucedido', response.data);
+      navigationHome.navigate("Home")
+    } else {
+      console.error('Erro no login', response.status);
+    }
+  
+   setName("")
+   setSenha("")
     
     
-    navigation.navigate("Home")
-   
+  }
     
-  } catch (error:any) {
+   catch (error:any) {
     console.log(error)
     alert("Sigh in failed: "+ error.message)
   }
@@ -47,14 +63,14 @@ const SighIn = async()=>{
           <View style={styles.boxdiv}>
             
             
-          <Text >Email</Text>
+          <Text >Username</Text>
           <TextInput
           style ={styles.inputBox}
-          placeholder='Digite seu email'
+          placeholder='Digite seu nome'
           placeholderTextColor='#B2B2B2'
-          value={email}
-          onChangeText={text=>setEmail(text)}
-          keyboardType='email-address'
+          value={name}
+          onChangeText={text=>setName(text)}
+          
           
           />
           
@@ -67,7 +83,7 @@ const SighIn = async()=>{
           placeholder='Digite sua senha'
           secureTextEntry={true}
           placeholderTextColor='#B2B2B2'
-          value={senha}
+          value={password}
           onChangeText={text=>setSenha(text)}
         />
           
