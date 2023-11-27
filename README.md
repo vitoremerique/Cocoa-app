@@ -7,6 +7,10 @@
 - Expo 48.0.15
 - TypeScript 4.9.4
 - Node.js 16.14.0
+<<<<<<< HEAD
+=======
+
+>>>>>>> 45a13bf34c7f3fb89b60dc1910b06f6d15bb5141
 ## Main Libraries: :warning:
 - react-native-web: 0.18.10
 - react-dom: 18.2.0
