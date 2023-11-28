@@ -26,7 +26,8 @@
 ## Instaling dependencies
 - Execute the command on terminal 
 ```npm install```
-## Executiing project :shipit: 
+## Running project :shipit: 
 - To execute the project run on terminal the command ahead
 - ```npm start```.
-
+## The Backend API:
+- Link: ```https://github.com/vitoremerique/API-CocoaApp.git```

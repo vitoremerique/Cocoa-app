@@ -12,7 +12,7 @@ import { View, Text,  Button, Image, Alert, StatusBar, } from "react-native";
 
 
 
-export default function Galery(){
+export default function Cam(){
   const [image, setImage] = useState("");
   
  
